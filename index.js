@@ -68,8 +68,8 @@ app.post("/student/", async (request, response) => {
       );`;
 
   const dbResponse = await db.run(addStudentQuery);
-  const Id = dbResponse.lastID;
-  response.send({ studentId: Id });
+  const studentLastId = dbResponse.lastID;
+  response.send({ studentId: studentLastId });
 });
 
 // POST API mentor
@@ -88,6 +88,6 @@ app.post("/mentor/", async (request, response) => {
       );`;
 
   const dbResponse = await db.run(addMentorQuery);
-  const Id = dbResponse.lastID;
-  response.send({ mentorId: Id });
+  const mentorLastId = dbResponse.lastID;
+  response.send({ mentorId: mentorLastId });
 });
